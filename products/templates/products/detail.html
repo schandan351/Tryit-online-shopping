@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                    {{object.timestamp|timesince}}  ago<br/>
+                    {{object.description}}
+                    {{object.price}}
+                    <img src="{{object.image.url}}" alt="" class="img-fluid"> 
+            </div>
+        </div>
+
+        <div class='col-12 col-md-6'>
+              {% include 'products/snippets/cart-update.html' with product=object cart=cart %}
+        </div>
+{% endblock%}
+
